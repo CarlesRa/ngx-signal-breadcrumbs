@@ -1,18 +1,58 @@
-# LibsWorkspace
+# ngx-signal-breadcrumbs
+
+`ngx-signal-breadcrumbs` is an Angular library designed to provide dynamic and reactive breadcrumbs using Angular Signals. It's built to be flexible and easily integrated into your Angular applications, automatically adapting to your routing structure.
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.1.0.
 
-## Development server
+## Installation
 
-To start a local development server, run:
+To install the library, run:
 
 ```bash
-ng serve
+npm install ngx-signal-breadcrumbs
+```
+
+## Usage
+
+To use the library, import `NgxSignalBreadcrumbsModule` into your `AppModule` or standalone component and add the `<ngx-signal-breadcrumbs></ngx-signal-breadcrumbs>` component to your template.
+
+```typescript
+// app.module.ts or your standalone component
+import { NgxSignalBreadcrumbsModule } from 'ngx-signal-breadcrumbs';
+
+@NgModule({
+  imports: [
+    // ...
+    NgxSignalBreadcrumbsModule
+  ],
+  // ...
+})
+export class AppModule { }
+```
+
+```html
+<!-- app.component.html -->
+<ngx-signal-breadcrumbs></ngx-signal-breadcrumbs>
+<router-outlet></router-outlet>
+```
+
+Refer to the library's documentation for advanced usage and customization options.
+
+## Sandbox Demo Application
+
+The `sandbox` project in this workspace serves as a demo application to showcase the features and usage of `ngx-signal-breadcrumbs`.
+
+### Development server
+
+To start a local development server for the `sandbox` application, run:
+
+```bash
+ng serve sandbox
 ```
 
 Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
 
-## Code scaffolding
+### Code scaffolding
 
 Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
 
@@ -23,28 +63,32 @@ ng generate component component-name
 For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
 
 ```bash
-ng generate --help
+ng generate --help`
 ```
 
-## Building
+### Building
 
-To build the project run:
+To build the project (both the library and the sandbox application), run:
 
 ```bash
 ng build
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+To build only the library, run `ng build ngx-signal-breadcrumbs`.
+To build only the sandbox application, run `ng build sandbox`.
 
-## Running unit tests
+This will compile your project and store the build artifacts in the `dist/` directory or `docs/` for the sandbox application when configured for GitHub Pages. By default, the production build optimizes your application for performance and speed.
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+### Running unit tests
+
+To execute unit tests with the [Vitest](https://vitest.dev/) test runner for all projects, use the following command:
 
 ```bash
 ng test
 ```
+To run tests for a specific project, e.g., `ngx-signal-breadcrumbs`, use `ng test ngx-signal-breadcrumbs`.
 
-## Running end-to-end tests
+### Running end-to-end tests
 
 For end-to-end (e2e) testing, run:
 
