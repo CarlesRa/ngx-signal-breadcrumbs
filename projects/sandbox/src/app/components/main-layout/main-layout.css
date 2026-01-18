@@ -276,6 +276,10 @@ input:checked + .slider:before {
   text-decoration: underline;
 }
 
+.distinguishable-link {
+  text-decoration: underline;
+}
+
 /* Notification Styles */
 .notification-container {
   position: fixed;
