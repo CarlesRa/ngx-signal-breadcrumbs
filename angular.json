@@ -43,7 +43,10 @@
         "build": {
           "builder": "@angular/build:application",
           "options": {
-            "outputPath": "docs",
+            "outputPath": {
+          "base": "docs",
+          "browser": ""
+        },
             "browser": "projects/sandbox/src/main.ts",
             "tsConfig": "projects/sandbox/tsconfig.app.json",
             "assets": [
