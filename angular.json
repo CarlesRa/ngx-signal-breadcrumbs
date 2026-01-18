@@ -44,10 +44,9 @@
           "builder": "@angular/build:application",
           "options": {
             "outputPath": {
-          "base": "docs",
-          "browser": ""
-        },
-        "baseHref": "/signal-breadcrumbs-workspace/",
+              "base": "docs",
+              "browser": ""
+            },
             "browser": "projects/sandbox/src/main.ts",
             "tsConfig": "projects/sandbox/tsconfig.app.json",
             "assets": [
@@ -74,7 +73,8 @@
                   "maximumError": "8kB"
                 }
               ],
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "baseHref": "/signal-breadcrumbs-workspace/"
             },
             "development": {
               "optimization": false,
