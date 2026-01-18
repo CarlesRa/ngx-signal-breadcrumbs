@@ -7,6 +7,11 @@
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
+    "paths": {
+      "ngx-signal-breadcrumbs": [
+        "./dist/ngx-signal-breadcrumbs"
+      ]
+    },
     "noFallthroughCasesInSwitch": true,
     "skipLibCheck": true,
     "isolatedModules": true,
@@ -21,5 +26,19 @@
     "strictInputAccessModifiers": true,
     "strictTemplates": true
   },
-  "files": []
+  "files": [],
+  "references": [
+    {
+      "path": "./projects/ngx-signal-breadcrumbs/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/ngx-signal-breadcrumbs/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/sandbox/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/sandbox/tsconfig.spec.json"
+    }
+  ]
 }

@@ -2,9 +2,162 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "cli": {
-    "packageManager": "npm"
+    "packageManager": "npm",
+    "analytics": "fdcbf3dc-a975-488b-a547-3b2f93607cf4"
   },
   "newProjectRoot": "projects",
   "projects": {
+    "ngx-signal-breadcrumbs": {
+      "projectType": "library",
+      "root": "projects/ngx-signal-breadcrumbs",
+      "sourceRoot": "projects/ngx-signal-breadcrumbs/src",
+      "prefix": "ngx",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:ng-packagr",
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ngx-signal-breadcrumbs/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/ngx-signal-breadcrumbs/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular/build:unit-test",
+          "options": {
+            "tsConfig": "projects/ngx-signal-breadcrumbs/tsconfig.spec.json"
+          }
+        }
+      }
+    },
+    "demo-app": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/demo-app",
+      "sourceRoot": "projects/demo-app/src",
+      "prefix": "gy",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:application",
+          "options": {
+            "browser": "projects/demo-app/src/main.ts",
+            "tsConfig": "projects/demo-app/tsconfig.app.json",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "projects/demo-app/public"
+              }
+            ],
+            "styles": [
+              "projects/demo-app/src/styles.css"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kB",
+                  "maximumError": "1MB"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "4kB",
+                  "maximumError": "8kB"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular/build:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "demo-app:build:production"
+            },
+            "development": {
+              "buildTarget": "demo-app:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "test": {
+          "builder": "@angular/build:unit-test"
+        }
+      }
+    },
+    "sandbox": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/sandbox",
+      "sourceRoot": "projects/sandbox/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:application",
+          "options": {
+            "browser": "projects/sandbox/src/main.ts",
+            "tsConfig": "projects/sandbox/tsconfig.app.json",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "projects/sandbox/public"
+              }
+            ],
+            "styles": [
+              "projects/sandbox/src/styles.css"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kB",
+                  "maximumError": "1MB"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "4kB",
+                  "maximumError": "8kB"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular/build:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "sandbox:build:production"
+            },
+            "development": {
+              "buildTarget": "sandbox:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "test": {
+          "builder": "@angular/build:unit-test"
+        }
+      }
+    }
   }
 }

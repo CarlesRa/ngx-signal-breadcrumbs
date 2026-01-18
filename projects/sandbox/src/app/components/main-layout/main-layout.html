@@ -1,0 +1,103 @@
+<main class="content">
+  <!-- Hero Section -->
+  <header class="hero">
+    <h1 class="hero-title">
+      <span class="gradient-text">ngx-signal-breadcrumbs</span>
+    </h1>
+    <p class="hero-subtitle">
+      A lightweight, modern, and signal-based breadcrumb solution for Angular.
+    </p>
+  </header>
+
+  <!-- Main Content -->
+  <div class="main-layout">
+    <!-- Left Column: Preview and Usage -->
+    <div class="preview-column">
+      <section class="card">
+        <h2 class="card-title">Live Preview</h2>
+        <div class="preview-area">
+          <ngx-signal-breadcrumbs [showHome]="showHome()" [linkColor]="linkColor()" [linkHoverColor]="linkHoverColor()"
+            [separatorColor]="separatorColor()" [currentWeight]="currentWeight()" [separator]="separator()" />
+        </div>
+      </section>
+
+      <section class="card">
+        <h2 class="card-title">Navigation</h2>
+        <p>Use these links to see the breadcrumbs in action.</p>
+        <nav class="navigation-links">
+          <a routerLink="/home" routerLinkActive="active-link">Home</a>
+          <a routerLink="/products" routerLinkActive="active-link">Products</a>
+          <a routerLink="/products/laptops" routerLinkActive="active-link">Laptops</a>
+          <a routerLink="/products/laptops/macbook-pro" routerLinkActive="active-link">Macbook Pro</a>
+          <a routerLink="/products/laptops/dell-xps" routerLinkActive="active-link">Dell XPS</a>
+        </nav>
+      </section>
+
+      <section class="card">
+        <h2 class="card-title">Usage</h2>
+        <p>Import and add the component to your template:</p>
+        <pre><code class="code-block">
+&lt;ngx-signal-breadcrumbs&gt;&lt;/ngx-signal-breadcrumbs&gt;
+        </code></pre>
+        <p>Customize it with the available inputs:</p>
+        <pre><code class="code-block">
+&lt;ngx-signal-breadcrumbs
+  [showHome]="true"
+  [linkColor]="'#3b82f6'"
+  [linkHoverColor]="'#93c5fd'"
+  [separator]="'slash'"&gt;
+&lt;/ngx-signal-breadcrumbs&gt;
+        </code></pre>
+      </section>
+    </div>
+
+    <!-- Right Column: Controls -->
+    <div class="controls-column">
+      <aside class="card">
+        <h2 class="card-title">Playground</h2>
+        <p>Experiment with the options in real-time.</p>
+
+        <div class="controls-grid">
+          <div class="control">
+            <label for="show-home">Show Home Link</label>
+            <label class="switch">
+              <input id="show-home" type="checkbox" [checked]="showHome()"
+                (change)="showHome.set($any($event.target).checked)" />
+              <span class="slider"></span>
+            </label>
+          </div>
+
+          <div class="control">
+            <label for="separator">Separator Icon</label>
+            <select id="separator" class="select-input" #separatorSelect [value]="separator()"
+              (change)="setSeparator($any(separatorSelect.value))">
+              @for(separator of separators; track $index) {
+              <option [value]="separator">{{ separator }}</option>
+              }
+            </select>
+          </div>
+
+          <div class="control">
+            <label for="link-color">Link Color</label>
+            <input id="link-color" type="color" class="color-input" [value]="linkColor()"
+              (input)="linkColor.set($any($event.target).value)" />
+          </div>
+
+          <div class="control">
+            <label for="link-hover-color">Link Hover Color</label>
+            <input id="link-hover-color" type="color" class="color-input" [value]="linkHoverColor()"
+              (input)="linkHoverColor.set($any($event.target).value)" />
+          </div>
+
+          <div class="control">
+            <label for="separator-color">Separator Color</label>
+            <input id="separator-color" type="color" class="color-input" [value]="separatorColor()"
+              (input)="separatorColor.set($any($event.target).value)" />
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <router-outlet></router-outlet>
+</main>

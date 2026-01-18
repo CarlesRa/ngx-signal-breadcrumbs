@@ -1,12 +1,15 @@
 {
-  "name": "libs-workspace",
+  "name": "signal-breadcrumbs-workspace",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+  "start:sandbox": "ng serve sandbox",
+  "build:sandbox": "ng build sandbox",
+  "build:lib": "ng build ngx-signal-breadcrumbs",
+  "watch:lib": "ng build ngx-signal-breadcrumbs --watch --configuration development",
+  "start": "npm run build:lib --watch && ng serve sandbox",
+  "build": "npm run build:lib && npm run build:sandbox",
+  "test": "ng test"
   },
   "prettier": {
     "printWidth": 100,
@@ -33,8 +36,12 @@
     "tslib": "^2.3.0"
   },
   "devDependencies": {
+    "@angular/build": "^21.1.0",
     "@angular/cli": "^21.1.0",
     "@angular/compiler-cli": "^21.1.0",
-    "typescript": "~5.9.2"
+    "jsdom": "^27.1.0",
+    "ng-packagr": "^21.1.0",
+    "typescript": "~5.9.2",
+    "vitest": "^4.0.8"
   }
 }

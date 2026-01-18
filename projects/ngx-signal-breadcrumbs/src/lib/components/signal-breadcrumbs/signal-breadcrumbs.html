@@ -1,0 +1,25 @@
+<nav aria-label="Breadcrumb" class="breadcrumbs" [style.--breadcrumb-link-color]="linkColor()"
+  [style.--breadcrumb-link-hover-color]="linkHoverColor()"
+  [style.--breadcrumb-separator-color]="separatorColor()">
+  <ol>
+    @if (showHome()) {
+      <li>
+        <a routerLink="/">
+          <svg si-icon="home" size="18" class="home-icon"></svg>
+        </a>
+      </li>
+    }
+
+    @for (breadcrumb of breadcrumbs(); track $index; let last = $last) {
+    <li>
+      <svg [si-icon]="separator()" size="16" class="separator"></svg>
+
+      @if (!last) {
+      <a [routerLink]="breadcrumb.url" [queryParams]="breadcrumb.queryParams">{{ breadcrumb.label }}</a>
+      } @else {
+      <span class="current" aria-current="page">{{ breadcrumb.label }}</span>
+      }
+    </li>
+    }
+  </ol>
+</nav>
