@@ -268,15 +268,11 @@ input:checked + .slider:before {
 }
 
 .app-footer a {
-  color: #3b82f6;
+  color: #60a5fa;
   text-decoration: none;
 }
 
 .app-footer a:hover {
-  text-decoration: underline;
-}
-
-.distinguishable-link {
   text-decoration: underline;
 }
 
