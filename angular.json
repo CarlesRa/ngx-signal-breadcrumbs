@@ -47,6 +47,7 @@
           "base": "docs",
           "browser": ""
         },
+        "baseHref": "/signal-breadcrumbs-workspace/",
             "browser": "projects/sandbox/src/main.ts",
             "tsConfig": "projects/sandbox/tsconfig.app.json",
             "assets": [
