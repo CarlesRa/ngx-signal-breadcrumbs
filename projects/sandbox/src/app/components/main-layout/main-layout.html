@@ -17,7 +17,7 @@
         <h2 class="card-title">Live Preview</h2>
         <div class="preview-area">
           <ngx-signal-breadcrumbs [showHome]="showHome()" [linkColor]="linkColor()" [linkHoverColor]="linkHoverColor()"
-            [separatorColor]="separatorColor()" [currentWeight]="currentWeight()" [separator]="separator()" />
+            [separatorColor]="separatorColor()" [separator]="separator()" />
         </div>
       </section>
 
@@ -37,7 +37,7 @@
         <h2 class="card-title">Usage</h2>
         <p>Import and add the component to your template:</p>
         <pre><code class="code-block">
-&lt;ngx-signal-breadcrumbs&gt;&lt;/ngx-signal-breadcrumbs&gt;
+&lt;ngx-signal-breadcrumbs /&gt;
         </code></pre>
         <p>Customize it with the available inputs:</p>
         <pre><code class="code-block">
@@ -45,8 +45,7 @@
   [showHome]="true"
   [linkColor]="'#3b82f6'"
   [linkHoverColor]="'#93c5fd'"
-  [separator]="'slash'"&gt;
-&lt;/ngx-signal-breadcrumbs&gt;
+  [separator]="'slash'" /&gt;
         </code></pre>
       </section>
     </div>
@@ -78,6 +77,12 @@
           </div>
 
           <div class="control">
+            <label for="separator-color">Separator Color</label>
+            <input id="separator-color" type="color" class="color-input" [value]="separatorColor()"
+              (input)="separatorColor.set($any($event.target).value)" />
+          </div>
+
+          <div class="control">
             <label for="link-color">Link Color</label>
             <input id="link-color" type="color" class="color-input" [value]="linkColor()"
               (input)="linkColor.set($any($event.target).value)" />
@@ -88,16 +93,11 @@
             <input id="link-hover-color" type="color" class="color-input" [value]="linkHoverColor()"
               (input)="linkHoverColor.set($any($event.target).value)" />
           </div>
-
-          <div class="control">
-            <label for="separator-color">Separator Color</label>
-            <input id="separator-color" type="color" class="color-input" [value]="separatorColor()"
-              (input)="separatorColor.set($any($event.target).value)" />
-          </div>
+          
         </div>
       </aside>
     </div>
   </div>
 
-  <router-outlet></router-outlet>
+  <router-outlet/>
 </main>
