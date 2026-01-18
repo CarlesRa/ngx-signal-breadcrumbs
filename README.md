@@ -14,33 +14,30 @@ npm install ngx-signal-breadcrumbs
 
 ## Usage
 
-To use the library, import `NgxSignalBreadcrumbsModule` into your `AppModule` or standalone component and add the `<ngx-signal-breadcrumbs></ngx-signal-breadcrumbs>` component to your template.
+To use the library, import the `NgxSignalBreadcrumbs` component into your standalone component and add the `<ngx-signal-breadcrumbs />` component to your template.
 
 ```typescript
-// app.module.ts or your standalone component
-import { NgxSignalBreadcrumbsModule } from 'ngx-signal-breadcrumbs';
+// your-standalone-component.ts
+import { Component } from '@angular/core';
+import { NgxSignalBreadcrumbs } from 'ngx-signal-breadcrumbs';
 
-@NgModule({
-  imports: [
-    // ...
-    NgxSignalBreadcrumbsModule
-  ],
+@Component({
+  standalone: true,
+  imports: [NgxSignalBreadcrumbs],
+  template: `
+    <ngx-signal-breadcrumbs />
+    <router-outlet />
+  `,
   // ...
 })
-export class AppModule { }
-```
-
-```html
-<!-- app.component.html -->
-<ngx-signal-breadcrumbs></ngx-signal-breadcrumbs>
-<router-outlet></router-outlet>
+export class YourStandaloneComponent { }
 ```
 
 Refer to the library's documentation for advanced usage and customization options.
 
 ## Sandbox Demo Application
 
-The `sandbox` project in this workspace serves as a demo application to showcase the features and usage of `ngx-signal-breadcrumbs`.
+The `sandbox` project in this workspace serves as a demo application to showcase the features and usage of `ngx-signal-breadcrumbs`. It is a standalone Angular application that demonstrates the use of self-closing tags in its templates.
 
 ### Development server
 
