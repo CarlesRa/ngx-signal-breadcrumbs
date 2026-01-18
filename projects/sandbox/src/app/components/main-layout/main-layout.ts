@@ -1,6 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
-import { SignalBreadcrumbs, IconName } from 'ngx-signal-breadcrumbs';
+import { SignalBreadcrumbs, IconName, ICON_PATHS } from 'ngx-signal-breadcrumbs';
 
 
 @Component({
@@ -11,7 +11,8 @@ import { SignalBreadcrumbs, IconName } from 'ngx-signal-breadcrumbs';
 })
 export class MainLayout {
   // All separators available
-  separators: IconName[] = ['chevron-right', 'arrow-right', 'dot', 'slash', 'pipe'];
+  separators: IconName[] = (Object.keys(ICON_PATHS) as IconName[])
+    .filter(icon => icon !== 'home');
 
   // Signals for all inputs
   showHome = signal(true);
