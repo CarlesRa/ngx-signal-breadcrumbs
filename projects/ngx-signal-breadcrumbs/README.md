@@ -11,6 +11,9 @@ A modern, reactive breadcrumb navigation component for Angular 19+ using Signals
 - 🔧 **TypeScript** - Full type safety
 - ✨ **Standalone** - No module imports needed
 
+## Live Demo
+Check out the live demo here: [ngx-signal-breadcrumbs Live Demo](https://carlesra.github.io/ngx-signal-breadcrumbs/#/home)
+
 ## Installation
 ```bash
 npm install ngx-signal-breadcrumbs
@@ -77,26 +80,28 @@ Set `breadcrumb: null` to skip a route in the breadcrumb trail:
   [showHome]="true"
   [separator]="'chevron-right'"
   [linkColor]="'#3b82f6'"
+  [linkHoverColor]="'#93c5fd'"
   [separatorColor]="'#94a3b8'"
 />
 ```
 
 | Input | Type | Default | Description |
-|-------|------|---------|-------------|
+|---|---|---|---|
 | `showHome` | `boolean` | `true` | Show home icon as first item |
-| `separator` | `string` | `'chevron-right'` | Icon separator between items |
-| `linkColor` | `string` | `'#374151'` | Color for clickable links |
-| `separatorColor` | `string` | `'#9ca3af'` | Color for separators |
+| `linkColor` | `string` | `'#3b82f6'` | Color for clickable links |
+| `linkHoverColor` | `string` | `'#93c5fd'` | Color for links on hover |
+| `separatorColor` | `string` | `'#94a3b8'` | Color for separators |
+| `separator` | `IconName` | `'chevron-right'` | Icon separator between items |
 
 ### CSS Variables
 
-Override these CSS variables for custom styling:
+Override these CSS variables for custom styling. These are the default values:
 ```css
 ngx-signal-breadcrumbs {
-  --breadcrumb-link-color: #1e40af;
-  --breadcrumb-separator-color: #d1d5db;
-  --breadcrumb-current-color: #6b7280;
-  --breadcrumb-hover-color: #1e3a8a;
+  --breadcrumb-link-color: #374151; /* Default from signal-breadcrumbs.css */
+  --breadcrumb-link-hover-color: #93c5fd; /* Default from input binding */
+  --breadcrumb-separator-color: #9ca3af; /* Default from signal-breadcrumbs.css */
+  --breadcrumb-current-color: #6b7280; /* Default from signal-breadcrumbs.css */
 }
 ```
 
