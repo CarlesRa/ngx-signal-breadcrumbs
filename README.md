@@ -35,6 +35,10 @@ export class YourStandaloneComponent { }
 
 Refer to the library's documentation for advanced usage and customization options.
 
+## Demo
+
+You can see a live demo of the component in action here: [https://carlesra.github.io/ngx-signal-breadcrumbs/home](https://carlesra.github.io/ngx-signal-breadcrumbs/home)
+
 ## Sandbox Demo Application
 
 The `sandbox` project in this workspace serves as a demo application to showcase the features and usage of `ngx-signal-breadcrumbs`. It is a standalone Angular application that demonstrates the use of self-closing tags in its templates.
