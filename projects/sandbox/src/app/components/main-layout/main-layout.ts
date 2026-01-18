@@ -18,7 +18,6 @@ export class MainLayout {
   linkColor = signal('#3b82f6');
   linkHoverColor = signal('#93c5fd');
   separatorColor = signal('#94a3b8');
-  currentWeight = signal('500');
   separator = signal<IconName>('chevron-right');
 
   setSeparator(separator: IconName): void {

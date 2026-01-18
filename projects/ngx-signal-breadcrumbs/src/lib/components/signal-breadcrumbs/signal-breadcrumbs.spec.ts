@@ -41,7 +41,6 @@ describe('SignalBreadcrumbs', () => {
     expect(component['showHome']()).toBe(true);
     expect(component['linkColor']()).toBe('#3b82f6');
     expect(component['separatorColor']()).toBe('#94a3b8');
-    expect(component['currentWeight']()).toBe('500');
     expect(component['separator']()).toBe('chevron-right');
   });
 
