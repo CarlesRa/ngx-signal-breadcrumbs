@@ -74,7 +74,7 @@
                 }
               ],
               "outputHashing": "all",
-              "baseHref": "/signal-breadcrumbs-workspace/"
+              "baseHref": "/ngx-signal-breadcrumbs/"
             },
             "development": {
               "optimization": false,
