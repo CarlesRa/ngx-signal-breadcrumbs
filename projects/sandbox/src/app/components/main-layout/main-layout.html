@@ -73,12 +73,12 @@
 
         <div class="controls-grid">
           <div class="control">
-            <label for="show-home">Show Home Link</label>
-            <label class="switch">
-              <input id="show-home" type="checkbox" [checked]="showHome()"
+            <label id="show-home-label" for="show-home">Show Home Link</label>
+            <div class="switch">
+              <input id="show-home" type="checkbox" aria-labelledby="show-home-label" [checked]="showHome()"
                 (change)="showHome.set($any($event.target).checked)" />
               <span class="slider"></span>
-            </label>
+            </div>
           </div>
 
           <div class="control">
