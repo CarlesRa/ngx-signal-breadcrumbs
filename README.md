@@ -37,7 +37,7 @@ Refer to the library's documentation for advanced usage and customization option
 
 ## Demo
 
-You can see a live demo of the component in action here: [https://carlesra.github.io/ngx-signal-breadcrumbs/home](https://carlesra.github.io/ngx-signal-breadcrumbs/home)
+You can see a live demo of the component in action here: [https://carlesra.github.io/ngx-signal-breadcrumbs/home](https://carlesra.github.io/ngx-signal-breadcrumbs)
 
 ## Sandbox Demo Application
 
