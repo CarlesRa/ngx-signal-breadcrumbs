@@ -37,18 +37,18 @@ Refer to the library's documentation for advanced usage and customization option
 
 ## Demo
 
-You can see a live demo of the component in action here: [https://carlesra.github.io/ngx-signal-breadcrumbs/home](https://carlesra.github.io/ngx-signal-breadcrumbs)
+You can see a live demo of the component in action here: [https://carlesra.github.io/ngx-signal-breadcrumbs](https://carlesra.github.io/ngx-signal-breadcrumbs)
 
 ## Sandbox Demo Application
 
-The `sandbox` project in this workspace serves as a demo application to showcase the features and usage of `ngx-signal-breadcrumbs`. It is a standalone Angular application that demonstrates the use of self-closing tags in its templates.
+The `sandbox` project in this workspace serves as a demo application to showcase the features and usage of `ngx-signal-breadcrumbs`.
 
 ### Development server
 
 To start a local development server for the `sandbox` application, run:
 
 ```bash
-ng serve sandbox
+npm run start:sandbox
 ```
 
 Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
@@ -72,11 +72,11 @@ ng generate --help`
 To build the project (both the library and the sandbox application), run:
 
 ```bash
-ng build
+npm run build
 ```
 
-To build only the library, run `ng build ngx-signal-breadcrumbs`.
-To build only the sandbox application, run `ng build sandbox`.
+To build only the library, run `npm run build:lib`.
+To build only the sandbox application, run `npm run build:sandbox`.
 
 This will compile your project and store the build artifacts in the `dist/` directory or `docs/` for the sandbox application when configured for GitHub Pages. By default, the production build optimizes your application for performance and speed.
 
