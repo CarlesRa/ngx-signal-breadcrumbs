@@ -1,3 +1,9 @@
+@if (notificationMessage()) {
+  <div class="notification-container">
+    <div class="notification-message">{{ notificationMessage() }}</div>
+  </div>
+}
+
 <main class="content">
   <!-- Hero Section -->
   <header class="hero">
@@ -31,6 +37,15 @@
           <a routerLink="/products/laptops/macbook-pro" routerLinkActive="active-link">Macbook Pro</a>
           <a routerLink="/products/laptops/dell-xps" routerLinkActive="active-link">Dell XPS</a>
         </nav>
+      </section>
+
+      <section class="card">
+        <h2 class="card-title">Installation</h2>
+        <p>Install the library via npm:</p>
+        <div class="code-block-container">
+          <pre><code class="code-block" id="npm-install-command">npm install ngx-signal-breadcrumbs</code></pre>
+          <button class="copy-button" (click)="copyToClipboard('npm-install-command')">Copy</button>
+        </div>
       </section>
 
       <section class="card">
@@ -101,3 +116,10 @@
 
   <router-outlet/>
 </main>
+<footer class="app-footer">
+  <p>
+    Author: Juan Carlos Ramos Moll (CarlesRa) |
+    <a href="https://github.com/CarlesRa" target="_blank" rel="noopener noreferrer">GitHub</a> |
+    License: MIT
+  </p>
+</footer>
