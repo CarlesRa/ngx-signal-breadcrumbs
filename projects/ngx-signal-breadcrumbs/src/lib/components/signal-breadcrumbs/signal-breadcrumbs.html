@@ -5,7 +5,8 @@
     @if (showHome()) {
       <li>
         <a routerLink="/">
-          <svg si-icon="home" size="18" class="home-icon"></svg>
+          <span class="visually-hidden">Home</span>
+          <svg si-icon="home" size="18" class="home-icon" aria-hidden="true"></svg>
         </a>
       </li>
     }

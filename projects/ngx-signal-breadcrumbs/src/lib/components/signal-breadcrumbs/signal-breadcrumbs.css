@@ -1,5 +1,5 @@
 .breadcrumbs {
-  padding: 1rem 0;  
+  padding: 1rem 0;
   --breadcrumb-link-color: #374151;
   --breadcrumb-separator-color: #9ca3af;
   --breadcrumb-current-color: #6b7280;
@@ -19,7 +19,7 @@ li {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  min-height: 1.5rem; 
+  min-height: 1.5rem;
 }
 
 
@@ -45,4 +45,15 @@ a:hover {
 .current {
   color: var(--breadcrumb-current-color);
   font-weight: 500;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
 }
