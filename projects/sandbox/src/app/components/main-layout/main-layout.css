@@ -39,7 +39,7 @@
 
 .hero-subtitle {
   font-size: 1.25rem;
-  color: #94a3b8;
+  color: #cbd5e1;
   font-weight: bold;
 }
 
@@ -222,5 +222,5 @@ input:checked + .slider:before {
 .navigation-links a.active-link {
   background-color: #3b82f6;
   border-color: #3b82f6;
-  color: #ffffff;
+  color: #0f172a;
 }
