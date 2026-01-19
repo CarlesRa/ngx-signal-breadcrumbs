@@ -16,7 +16,7 @@ export class SignalBreadcrumbs {
   linkColor = input<string>('#3b82f6');
   linkHoverColor = input<string>('#93c5fd');
   separatorColor = input<string>('#94a3b8');
-  separator = input<IconName>('chevron-right')
+  separator = input<IconName>('chevron-right' as IconName)
 
   private breadcrumbService = inject(BreadcrumbService);
   protected breadcrumbs = this.breadcrumbService.breadcrumbs
