@@ -1,6 +1,6 @@
 {
   "name": "ngx-signal-breadcrumbs",
-  "version": "0.1.0-beta.0",
+  "version": "0.1.0-beta.1",
   "description": "A modern, reactive breadcrumb navigation component for Angular 19+ using Signals",
   "author": {
     "name": "Juan Carlos Ramos Moll",
