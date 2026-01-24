@@ -1,0 +1,39 @@
+<app-card title="Playground">
+  <p>Experiment with the options in real-time.</p>
+
+  <div class="controls-grid">
+
+    <app-control label="Show Home Link" controlId="show-home">
+      <label class="switch" for="show-home">
+        <input id="show-home" type="checkbox" aria-labelledby="show-home-label" [checked]="store.showHome()"
+          (change)="store.setShowHome($event.target.checked)" />
+        <span class="slider"></span>
+      </label>
+    </app-control>
+
+    <app-control label="Separator Icon" controlId="separator">
+      <select id="separator" class="select-input" #separatorSelect [value]="store.separator()"
+        (change)="store.setSeparator($any(separatorSelect.value))">
+        @for(separator of separators; track $index) {
+          <option [value]="separator">{{ separator }}</option>
+        }
+      </select>
+    </app-control>
+
+    <app-control label="Separator Color" controlId="separator-color">
+      <input id="separator-color" type="color" class="color-input" [value]="store.separatorColor()"
+        (input)="store.setSeparatorColor($event.target.value)" />
+    </app-control>
+
+    <app-control label="Link Color" controlId="link-color">
+      <input id="link-color" type="color" class="color-input" [value]="store.linkColor()"
+        (input)="store.setLinkColor($event.target.value)" />
+    </app-control>
+
+    <app-control label="Link Hover Color" controlId="link-hover-color">
+      <input id="link-hover-color" type="color" class="color-input" [value]="store.linkHoverColor()"
+        (input)="store.setLinkHoverColor($event.target.value)" />
+    </app-control>
+
+  </div>
+</app-card>

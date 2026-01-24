@@ -1,9 +1,10 @@
-@if (notificationMessage()) {
-  <div class="notification-container">
-    <div class="notification-message">{{ notificationMessage() }}</div>
+@if (notificationService.message()) {
+<div class="notification-container">
+  <div class="notification-message">
+    <strong>{{ notificationService.message() }}</strong>
   </div>
+</div>
 }
-
 <main class="content">
   <!-- Hero Section -->
   <header class="hero">
@@ -19,106 +20,37 @@
   <div class="main-layout">
     <!-- Left Column: Preview and Usage -->
     <div class="preview-column">
-      <section class="card">
-        <h2 class="card-title">Live Preview</h2>
-        <div class="preview-area">
-          <ngx-signal-breadcrumbs [showHome]="showHome()" [linkColor]="linkColor()" [linkHoverColor]="linkHoverColor()"
-            [separatorColor]="separatorColor()" [separator]="separator()" />
-        </div>
+
+      <section>
+        <app-live-preview />
       </section>
 
-      <section class="card">
-        <h2 class="card-title">Navigation</h2>
-        <p>Use these links to see the breadcrumbs in action.</p>
-        <nav class="navigation-links">
-          <a routerLink="/home" routerLinkActive="active-link">Home</a>
-          <a routerLink="/products" routerLinkActive="active-link">Products</a>
-          <a routerLink="/products/laptops" routerLinkActive="active-link">Laptops</a>
-          <a routerLink="/products/laptops/macbook-pro" routerLinkActive="active-link">Macbook Pro</a>
-          <a routerLink="/products/laptops/dell-xps" routerLinkActive="active-link">Dell XPS</a>
-        </nav>
+      <section>
+        <app-navigation />
       </section>
 
-      <section class="card">
-        <h2 class="card-title">Installation</h2>
-        <p>Install the library via npm:</p>
-        <div class="code-block-container">
-          <pre><code class="code-block" id="npm-install-command">npm install ngx-signal-breadcrumbs</code></pre>
-          <button class="copy-button" (click)="copyToClipboard('npm-install-command')">Copy</button>
-        </div>
+      <section>
+        <app-installation />
       </section>
 
-      <section class="card">
-        <h2 class="card-title">Usage</h2>
-        <p>Import and add the component to your template:</p>
-        <pre><code class="code-block">
-&lt;ngx-signal-breadcrumbs /&gt;
-        </code></pre>
-        <p>Customize it with the available inputs:</p>
-        <pre><code class="code-block">
-&lt;ngx-signal-breadcrumbs
-  [showHome]="true"
-  [linkColor]="'#3b82f6'"
-  [linkHoverColor]="'#93c5fd'"
-  [separator]="'slash'" /&gt;
-        </code></pre>
+      <section>
+        <app-usage />
       </section>
     </div>
 
     <!-- Right Column: Controls -->
     <div class="controls-column">
-      <aside class="card">
-        <h2 class="card-title">Playground</h2>
-        <p>Experiment with the options in real-time.</p>
-
-        <div class="controls-grid">
-          <div class="control">
-            <label id="show-home-label" for="show-home">Show Home Link</label>
-            <label class="switch" for="show-home">
-              <input id="show-home" type="checkbox" aria-labelledby="show-home-label" [checked]="showHome()"
-                (change)="showHome.set($any($event.target).checked)" />
-              <span class="slider"></span>
-            </label>
-          </div>
-
-          <div class="control">
-            <label for="separator">Separator Icon</label>
-            <select id="separator" class="select-input" #separatorSelect [value]="separator()"
-              (change)="setSeparator($any(separatorSelect.value))">
-              @for(separator of separators; track $index) {
-              <option [value]="separator">{{ separator }}</option>
-              }
-            </select>
-          </div>
-
-          <div class="control">
-            <label for="separator-color">Separator Color</label>
-            <input id="separator-color" type="color" class="color-input" [value]="separatorColor()"
-              (input)="separatorColor.set($any($event.target).value)" />
-          </div>
-
-          <div class="control">
-            <label for="link-color">Link Color</label>
-            <input id="link-color" type="color" class="color-input" [value]="linkColor()"
-              (input)="linkColor.set($any($event.target).value)" />
-          </div>
-
-          <div class="control">
-            <label for="link-hover-color">Link Hover Color</label>
-            <input id="link-hover-color" type="color" class="color-input" [value]="linkHoverColor()"
-              (input)="linkHoverColor.set($any($event.target).value)" />
-          </div>
-          
-        </div>
+      <aside>
+        <app-playground />
       </aside>
     </div>
   </div>
 
-  <router-outlet/>
+  <router-outlet />
 </main>
 <footer class="app-footer">
   <p>
-    Author: Juan Carlos Ramos Moll (CarlesRa) |
+    Juan Carlos Ramos Moll (CarlesRa) |
     <a href="https://github.com/CarlesRa" target="_blank" rel="noopener noreferrer">GitHub</a> |
     License: MIT
   </p>

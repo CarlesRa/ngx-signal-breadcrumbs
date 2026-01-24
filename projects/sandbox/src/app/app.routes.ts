@@ -9,7 +9,7 @@ export const routes: Routes = [
       {
         title: 'Home',
         path: 'home',
-        loadComponent: () => import('./components/pages/home/home').then(mod => mod.Home),
+        loadComponent: () => import('./pages/home/home').then(mod => mod.Home),
       },
       {
         title: 'Products',
@@ -20,7 +20,7 @@ export const routes: Routes = [
         children: [
           {
             path: '',
-            loadComponent: () => import('./components/pages/products/products').then(mod => mod.Products),
+            loadComponent: () => import('./pages/products/products').then(mod => mod.Products),
             data: {
               breadcrumb: null
             }
@@ -33,7 +33,7 @@ export const routes: Routes = [
             }, children: [
               {
                 path: '',
-                loadComponent: () => import('./components/pages/laptops/laptops').then(mod => mod.Laptops),
+                loadComponent: () => import('./pages/laptops/laptops').then(mod => mod.Laptops),
                 data: {
                   breadcrumb: null
                 }
@@ -41,7 +41,7 @@ export const routes: Routes = [
               {
                 title: 'Laptop information',
                 path: ':id',
-                loadComponent: () => import('./components/pages/laptop-detail/laptop-detail').then(mod => mod.LaptopDetail),
+                loadComponent: () => import('./pages/laptop-detail/laptop-detail').then(mod => mod.LaptopDetail),
                 data: {
                   breadcrumb: (route: ActivatedRouteSnapshot) => {
                     const id = route.params['id'] as string;

@@ -1,74 +1,26 @@
-import { Component, signal } from '@angular/core';
-import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
-import { SignalBreadcrumbs, IconName, ICON_PATHS } from 'ngx-signal-breadcrumbs';
+import { Component, inject, effect } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
+import { PlaygroundComponent } from "../playground-component/playground-component";
+import { LivePreviewComponent } from "../live-preview-component/live-preview-component";
+import { NavigationComponent } from "../navigation-component/navigation-component";
+import { InstallationComponent } from "../installation-component/installation-component";
+import { UsageComponent } from "../usage-component/usage-component";
+import { NotificationService } from '../../services/notification';
 
 
 @Component({
   selector: 'app-main-layout',
-  imports: [RouterOutlet, RouterLink, RouterLinkActive, SignalBreadcrumbs],
+  imports: [RouterOutlet, PlaygroundComponent, LivePreviewComponent, NavigationComponent, InstallationComponent, UsageComponent],
   templateUrl: './main-layout.html',
   styleUrl: './main-layout.css',
 })
 export class MainLayout {
-  // All separators available
-  separators: IconName[] = (Object.keys(ICON_PATHS) as IconName[])
-    .filter(icon => icon !== 'home');
+  notificationService = inject(NotificationService);
 
-  // Signals for all inputs
-  showHome = signal(true);
-  linkColor = signal('#3b82f6');
-  linkHoverColor = signal('#93c5fd');
-  separatorColor = signal('#94a3b8');
-  separator = signal<IconName>('chevron-right');
-
-  // Signal for notification message
-  notificationMessage = signal<string | null>(null);
-
-  setSeparator(separator: IconName): void {
-    this.separator.set(separator);
+  constructor() {
+    effect(() => {
+      console.log('Notification message changed:', this.notificationService.message());
+    });
   }
-
-  async copyToClipboard(elementId: string): Promise<void> {
-    const element = document.getElementById(elementId);
-    if (element && element.textContent) {
-      try {
-        await navigator.clipboard.writeText(element.textContent);
-        console.log('Copied to clipboard:', element.textContent);
-        this.showNotification('Text copied to clipboard!');
-      } catch (err) {
-        console.error('Failed to copy text:', err);
-        this.fallbackCopyToClipboard(element.textContent);
-        this.showNotification('Failed to copy text (fallback used)!');
-      }
-    }
-  }
-
-  private fallbackCopyToClipboard(text: string): void {
-    const textArea = document.createElement('textarea');
-    textArea.value = text;
-    textArea.style.top = '0';
-    textArea.style.left = '0';
-    textArea.style.position = 'fixed';
-
-    document.body.appendChild(textArea);
-    textArea.focus();
-    textArea.select();
-
-    try {
-      document.execCommand('copy');
-      console.log('Fallback: Copied to clipboard:', text);
-    } catch (err) {
-      console.error('Fallback: Failed to copy text:', err);
-    }
-
-    document.body.removeChild(textArea);
-  }
-
-  private showNotification(message: string): void {
-    this.notificationMessage.set(message);
-    setTimeout(() => {
-      this.notificationMessage.set(null);
-    }, 2000); // Notification disappears after 2 seconds
-  }
-
+  
 }
