@@ -1,0 +1,1 @@
+import{xa as o}from"./chunk-IFUHXRSC.js";var s=class e{static \u0275fac=function(t){return new(t||e)};static \u0275cmp=o({type:e,selectors:[["app-products"]],decls:0,vars:0,template:function(t,n){},encapsulation:2})};export{s as Products};

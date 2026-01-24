@@ -1,13 +1,34 @@
 {
   "name": "ngx-signal-breadcrumbs",
-  "version": "0.0.1",
+  "version": "0.1.0-beta.0",
+  "description": "A modern, reactive breadcrumb navigation component for Angular 19+ using Signals",
+  "author": {
+    "name": "Juan Carlos Ramos Moll",
+    "email": "tu-email@example.com",
+    "url": "https://github.com/CarlesRa"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CarlesRa/ngx-signal-breadcrumbs.git"
+  },
+  "homepage": "https://carlesra.github.io/ngx-signal-breadcrumbs",
+  "keywords": [
+    "angular",
+    "breadcrumbs",
+    "signals",
+    "navigation",
+    "angular19",
+    "standalone",
+    "typescript"
+  ],
   "peerDependencies": {
-    "@angular/common": "^21.1.0",
-    "@angular/core": "^21.1.0"
+    "@angular/common": ">=19.0.0",
+    "@angular/core": ">=19.0.0",
+    "@angular/router": ">=19.0.0"
   },
   "dependencies": {
     "tslib": "^2.3.0"
   },
-  "sideEffects": false,
-  "license": "MIT"
+  "sideEffects": false
 }

@@ -1,6 +1,6 @@
 .controls-grid {
   display: grid;
-  gap: 1.175rem;
+  gap: .925rem;
 }
 
 .select-input {
