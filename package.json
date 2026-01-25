@@ -3,13 +3,13 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-  "start:sandbox": "ng serve sandbox",
-  "build:sandbox": "ng build sandbox",
-  "build:lib": "ng build ngx-signal-breadcrumbs",
-  "watch:lib": "ng build ngx-signal-breadcrumbs --watch --configuration development",
-  "start": "npm run build:lib --watch && ng serve sandbox",
-  "build": "npm run build:lib && npm run build:sandbox",
-  "test": "ng test"
+    "start:sandbox": "ng serve sandbox",
+    "build:sandbox": "ng build sandbox",
+    "build:lib": "ng build ngx-signal-breadcrumbs",
+    "watch:lib": "ng build ngx-signal-breadcrumbs --watch --configuration development",
+    "start": "npm run build:lib --watch && ng serve sandbox",
+    "build": "npm run build:lib && npm run build:sandbox",
+    "test": "ng test"
   },
   "prettier": {
     "printWidth": 100,
@@ -32,6 +32,7 @@
     "@angular/forms": "^21.1.0",
     "@angular/platform-browser": "^21.1.0",
     "@angular/router": "^21.1.0",
+    "ngx-signal-breadcrumbs": "^0.1.0-beta.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0"
   },
