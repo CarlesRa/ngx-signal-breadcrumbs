@@ -1,1 +1,0 @@
-import{xa as p}from"./chunk-IFUHXRSC.js";var o=class e{static \u0275fac=function(t){return new(t||e)};static \u0275cmp=p({type:e,selectors:[["app-laptops"]],decls:0,vars:0,template:function(t,a){},encapsulation:2})};export{o as Laptops};

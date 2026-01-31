@@ -1,0 +1,1 @@
+import{ya as o}from"./chunk-LGLZ7FAB.js";var s=class e{static \u0275fac=function(t){return new(t||e)};static \u0275cmp=o({type:e,selectors:[["app-products"]],decls:0,vars:0,template:function(t,n){},encapsulation:2})};export{s as Products};

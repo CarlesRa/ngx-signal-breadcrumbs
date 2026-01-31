@@ -1,0 +1,1 @@
+import{ya as a}from"./chunk-LGLZ7FAB.js";var p=class e{static \u0275fac=function(t){return new(t||e)};static \u0275cmp=a({type:e,selectors:[["app-laptop-detail"]],decls:0,vars:0,template:function(t,i){},encapsulation:2})};export{p as LaptopDetail};
