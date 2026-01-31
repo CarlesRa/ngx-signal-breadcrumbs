@@ -1,8 +1,14 @@
-<app-card title="Playground">
-  <p>Experiment with the options in real-time.</p>
+@if (!deviceDetector.isMobile()) {
+  <app-card title="Playground">
+    <p>Experiment with the options in real-time.</p>
+    <ng-container *ngTemplateOutlet="controls" />
+  </app-card>
+} @else {
+  <ng-container *ngTemplateOutlet="controls" />
+}
 
+<ng-template #controls>
   <div class="controls-grid">
-
     <app-control label="Show Home Link" controlId="show-home">
       <label class="switch" for="show-home">
         <input id="show-home" type="checkbox" aria-labelledby="show-home-label" [checked]="store.showHome()"
@@ -34,6 +40,5 @@
       <input id="link-hover-color" type="color" class="color-input" [value]="store.linkHoverColor()"
         (input)="store.setLinkHoverColor($event.target.value)" />
     </app-control>
-
   </div>
-</app-card>
+</ng-template>

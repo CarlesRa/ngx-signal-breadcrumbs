@@ -38,12 +38,14 @@
       </section>
     </div>
 
+    @if (!deviceDetector.isMobile()) {
     <!-- Right Column: Controls -->
     <div class="controls-column">
       <aside>
         <app-playground />
       </aside>
     </div>
+    }
   </div>
 
   <router-outlet />
