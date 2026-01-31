@@ -16,11 +16,4 @@ import { NotificationService } from '../../services/notification';
 })
 export class MainLayout {
   notificationService = inject(NotificationService);
-
-  constructor() {
-    effect(() => {
-      console.log('Notification message changed:', this.notificationService.message());
-    });
-  }
-  
 }
